@@ -30,4 +30,20 @@ contract SimpleStorage {
     }
 
 
+    //Struct - object
+    struct Person{
+        string name;
+        uint favNum;       
+    }
+
+    Person public person1 = Person("P1", 5);
+
+    //Array
+    Person[] public personArr;
+
+    function addPerson(string memory _name, uint256 _fNum) public {
+        personArr.push(Person(_name, _fNum));
+    }
+
+
 }
