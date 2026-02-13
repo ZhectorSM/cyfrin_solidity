@@ -43,7 +43,13 @@ contract SimpleStorage {
 
     function addPerson(string memory _name, uint256 _fNum) public {
         personArr.push(Person(_name, _fNum));
+        nameToFavNumber[_name] = _fNum;
     }
+
+
+    //Mappings
+    mapping (string => uint256) public nameToFavNumber;
+
 
 
 }
