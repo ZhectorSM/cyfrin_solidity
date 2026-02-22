@@ -15,7 +15,7 @@ contract SimpleStorage {
     //Function
     uint256 public myNumber;
 
-    function store(uint256 _myNumber) public {
+    function store(uint256 _myNumber) public virtual {
         myNumber = _myNumber;
     }
 
