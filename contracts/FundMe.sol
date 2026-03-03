@@ -9,12 +9,19 @@ contract FundMe {
 
 
     uint256 minUsd = 5e18;
+    address[] funders;
+    mapping (address funder => uint256 amount) public funderToAmount;
+
 
     function fund () public  payable {
 
         
         uint256 ethInUsd = convertEthToUsd(msg.value);
-        require(ethInUsd >= minUsd, "Did not send enought ETH") ;
+        require(ethInUsd >= minUsd, "Did not send enought ETH");
+
+        //Register funders
+        funders.push(msg.sender);
+        funderToAmount[msg.sender] = funderToAmount[msg.sender] + msg.value;//Prev balance + new funds
 
     }
 
