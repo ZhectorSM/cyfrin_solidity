@@ -70,4 +70,13 @@ contract FundMe {
         _;//Execute the rest of the method
     }
 
+
+    receive() external payable { 
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
+     }
+
 }
